@@ -8,8 +8,8 @@ int cmpfunc (const void * a, const void * b) {
 
 // funtion to check if there are
 int check(int a[], int k) {
-    int i=0, j = 6 - 1 ;
-    int flag = -1;
+    int i=0, j = 6 - 1 ;    // i and j are indexes for the first and the last element of the array
+    int flag = -1;          // -1 is false
     while(i<j)
     {
         if(a[i] + a[j] == k)
@@ -17,13 +17,13 @@ int check(int a[], int k) {
             printf("%d + %d = %d\n", a[i], a[j], k);
             //return 0;  // comment out this line if you want to display only the first
             i++;
-            j--;
-            flag = 0;
+            j--;        // we increase and decrease the i and j indexes.
+            flag = 0;   // 0 is true
         }
         if(a[i] + a[j] < k)
-            i++;
+            i++;    // if sum is less than k that means we need a bigger number, so we increase i index.
         if(a[i] + a[j] > k)
-            j--;
+            j--;    // if sum is more than k that means we need a smaller number, so we decrease j index.
     }
     return flag;
 }
